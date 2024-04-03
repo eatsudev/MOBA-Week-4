@@ -16,4 +16,9 @@ public class CharChoose : MonoBehaviour
         SceneManager.LoadScene("Scene2");
         Time.timeScale = 1;
     }
+
+    public void BackButton()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
 }
