@@ -12,10 +12,15 @@ public class Stats : MonoBehaviour
 
     HeroCombat heroCombatScript;
 
+    private GameObject player;
+    public float expValue;
+
+
     // Start is called before the first frame update
     void Start()
     {
         heroCombatScript = GameObject.FindGameObjectWithTag("Player").GetComponent<HeroCombat>();
+        player = GameObject.FindGameObjectWithTag("Player");
     }
 
     // Update is called once per frame
@@ -26,6 +31,8 @@ public class Stats : MonoBehaviour
             Destroy(gameObject);
             heroCombatScript.targetedEnemy = null;
             heroCombatScript.performMeleeAttack = false;
+
+            player.GetComponent<LevelUpStats>().SetExperience(expValue);
         }
     }
 }
